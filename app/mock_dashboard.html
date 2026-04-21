@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Prediction Project</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fafafa;
+            color: #111111;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .sidebar {
+            width: 320px;
+            background-color: #ffffff;
+            padding: 40px;
+            height: 100vh;
+            box-sizing: border-box;
+            border-right: 2px solid #eeeeee;
+        }
+        .main {
+            flex-grow: 1;
+            padding: 60px 80px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            height: 100vh;
+            max-width: 1000px;
+        }
+        h1, h2, h3 { 
+            line-height: 1.2;
+            margin-top: 0; 
+            margin-bottom: 24px;
+        }
+        h1 { font-size: 36px; }
+        h2 { font-size: 24px; margin-top: 48px; border-bottom: 2px solid #111111; padding-bottom: 8px; display: inline-block; }
+        
+        p { margin-bottom: 24px; font-size: 18px; }
+
+        .input-group { margin-bottom: 24px; }
+        .input-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffffff;
+            border: 2px solid #cccccc;
+            color: #111111;
+            border-radius: 0; /* Flat, no rounding */
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+        
+        .btn {
+            background-color: #0056b3; /* Single accent color */
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 16px;
+        }
+        .btn:hover { background-color: #004494; }
+
+        .result-block {
+            margin-bottom: 48px;
+            padding: 24px;
+            background-color: #ffffff;
+            border-left: 4px solid #0056b3;
+        }
+        .result-block p { margin: 0 0 8px 0; font-size: 16px;}
+        .result-block strong { font-size: 20px; }
+
+        .chart-placeholder {
+            background-color: #eeeeee;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #cccccc;
+            color: #555555;
+            margin-bottom: 48px;
+            font-weight: 600;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Settings</h3>
+        <div class="input-group">
+            <label>Stock Ticker</label>
+            <input type="text" value="AAPL">
+        </div>
+        <div class="input-group">
+            <label>Model Type</label>
+            <select>
+                <option>LSTM</option>
+                <option>GRU</option>
+            </select>
+        </div>
+        <button class="btn">Run Prediction</button>
+    </div>
+    
+    <div class="main">
+        
+        <h1>Stock Market Prediction Project</h1>
+        <p>This is my project for predicting stock prices. I used deep learning (specifically LSTM and GRU models) along with sentiment analysis on news headlines to see if I can forecast where a stock is headed.</p>
+        <p>It's an academic research tool to analyze market trends based on historical data.</p>
+        
+        <h2>Current Model Results</h2>
+        <div class="result-block">
+            <p>On our hold-out test set for Apple (AAPL), the LSTM model achieved:</p>
+            <strong>Root Mean Squared Error: 3.42</strong>
+            <p style="margin-top: 8px; font-size: 14px; color: #555;">(Meaning our predictions are off by roughly $3.42 on average compared to the actual closing price).</p>
+        </div>
+        
+        <h2>Historical Data and Predictions</h2>
+        <div class="chart-placeholder">
+            [ Placeholder: The Python app renders an interactive price chart here showing actual vs predicted prices ]
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+outputs/
+*.png
+*.pkl
+*.exe
+*.msi
+*.zip
+.git/
+.vscode/
+*.bat
