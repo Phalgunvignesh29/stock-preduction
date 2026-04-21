@@ -101,6 +101,8 @@ class DataPreprocessor:
 
 # Example block
 if __name__ == "__main__":
+    import sys
+    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from data_collector import StockDataCollector
     from feature_engineer import FeatureEngineer
     

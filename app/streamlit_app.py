@@ -361,7 +361,7 @@ with tab1:
         st.markdown("**Analysis Breakdown:**")
         for r in reasons:
             st.markdown(r)
-        sentiment_val = df['Sentiment'].iloc[-1] if 'Sentiment' in df.columns else 0.0
+        sentiment_val = df['Sentiment_Score'].iloc[-1] if 'Sentiment_Score' in df.columns else 0.0
         sent_label = "Positive 🟢" if sentiment_val > 0.05 else "Negative 🔴" if sentiment_val < -0.05 else "Neutral ⚪"
         st.markdown(f"📰 **News Sentiment**: `{sentiment_val:.3f}` — {sent_label}")
 
